@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 
 const page = () => {
-
   const router = useRouter()
   const val = '2'
   return (

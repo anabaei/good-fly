@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
@@ -8,11 +9,10 @@ const Nav = () => (
       <Link href="/">
         <a sx={{fontWeight: 'bold', fontSize: 4, cursor: 'pointer'}}>Note App</a>
       </Link>
-
+      {/* {console.log(process.env)} */}
       <Link href="/notes">
         <a sx={{color: 'text', fontSize: 3, cursor: 'pointer'}}>notes</a>
       </Link>
-
     </nav>
   </header>
 )
