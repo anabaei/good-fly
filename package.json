@@ -15,7 +15,9 @@
     "next-connect": "^0.10.2",
     "next-env": "^1.1.1",
     "react": "17.0.1",
+    "react-country-region-selector": "^3.4.0",
     "react-dom": "17.0.1",
+    "react-geolocated": "^3.2.0",
     "theme-ui": "^0.10.0"
   },
   "devDependencies": {
