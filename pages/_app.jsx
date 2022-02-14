@@ -2,14 +2,23 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { ThemeProvider } from 'theme-ui'
-import theme from '../theme'
+import { themeLight, themeDark } from '../theme'
 import Nav from '../src/components/nav'
+import { useState } from 'react';
 
 export default function App({ Component, pageProps }) {
+
+  
+  const changeTheme = () =>{
+    currentTheme=== themeDark ? setstate(themeLight) : setstate(themeDark);
+  } 
+
+  const [currentTheme, setstate] = useState(themeLight)
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme} >
       <div>
-        <Nav />
+        <Nav changeTheme={changeTheme}/>
         <Component {...pageProps} />
       </div>      
     </ThemeProvider>
