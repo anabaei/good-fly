@@ -5,6 +5,9 @@ import { ThemeProvider } from 'theme-ui'
 import { themeLight, themeDark } from '../theme'
 import Nav from '../src/components/nav'
 import { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
+
+import "./styles.css";
 
 export default function App({ Component, pageProps }) {
 
