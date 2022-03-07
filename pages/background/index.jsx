@@ -1,4 +1,5 @@
 import Image from "next/image";
+import searches from "../search/index.jsx";
 
 const Background = () => (
   <div>
@@ -25,10 +26,10 @@ const Background = () => (
         height: "100vh",
         width: "100vw",
         overflow: "hidden",
-        zIndex: "-1",
+        zIndex: "1",
       }}
     >
-      Image Component
+       {searches()}
       <br />
       as a Background
     </p>

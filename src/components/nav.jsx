@@ -9,9 +9,9 @@ const Nav = (props) => (
     sx={{
       height: "60px",
       width: "100vw",
-      bg: "primary",
+      bg: "something",
       borderBottom: "1px solid",
-      borderColor: "primary",
+      // borderColor: "primary",
     }}
   >
     <nav
