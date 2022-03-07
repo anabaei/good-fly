@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }) {
   
   const changeTheme = () =>{
     currentTheme=== themeDark ? setstate(themeLight) : setstate(themeDark);
+    console.log("currentTheme===> ", currentTheme);
   } 
 
   const [currentTheme, setstate] = useState(themeLight)

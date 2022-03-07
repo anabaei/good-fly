@@ -10,6 +10,8 @@ export default (props) => (
       pattern={props.pattern}
       list={props.list}
       autoComplete={props.autoComplete}
+      // add background color in inputs
+      style={{background: "rgb(255, 255, 255)"}}
     />
   </Box>
 );

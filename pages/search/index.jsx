@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Button, Flex, Box } from "theme-ui";
 
 import Link from "next/link";
 import {
@@ -19,7 +19,6 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "react-datepicker";
 
-import { Box } from "@mui/material/Box";
 
 const searches = () => {
   const notes = new Array(15)
@@ -47,68 +46,65 @@ const searches = () => {
   ];
 
   return (
-    <div
-      sx={{
-        variant: "containers.page",
-        border: "1px solid orange",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <h1>Search</h1>
-
-      <Input
-        id="search"
-        list="places"
-        name="search"
-        md="4"
-        onChange={handleSearch}
-        pattern={autocompleteCities.join("|")}
-        autoComplete="off"
-      />
-      <datalist id="places">
-        {autocompleteCities.map((city, i) => (
-          <option key={i}>{city}</option>
-        ))}
-      </datalist>
-
-      <Input
-        id="search"
-        list="places"
-        name="search"
-        md="4"
-        onChange={handleSearch}
-        pattern={autocompleteCities.join("|")}
-        autoComplete="off"
-      />
-      <datalist id="places">
-        {autocompleteCities.map((city, i) => (
-          <option key={i}>{city}</option>
-        ))}
-      </datalist>
-
-      <div>
-        <DatePicker
-          showYearDropdown
-          selected={date}
-          // format="dd/mm/yyyy"
-          onChange={(date) => {
-            console.log(date);
-            setDate(date);
-          }}
+    <Flex>
+      <Box p={2} bg="primary" sx={{ flex: "2" }}>
+        <Input
+          id="search"
+          list="places"
+          name="search"
+          md="4"
+          onChange={handleSearch}
+          pattern={autocompleteCities.join("|")}
+          autoComplete="off"
         />
-      </div>
+        <datalist id="places">
+          {autocompleteCities.map((city, i) => (
+            <option key={i}>{city}</option>
+          ))}
+        </datalist>
+      </Box>
+      <Box p={2} bg="primary" sx={{ flex: "2" }}>
+      <Input
+        id="search"
+        list="places"
+        name="search"
+        md="4"
+        onChange={handleSearch}
+        pattern={autocompleteCities.join("|")}
+        autoComplete="off"
+      />
+      <datalist id="places">
+        {autocompleteCities.map((city, i) => (
+          <option key={i}>{city}</option>
+        ))}
+      </datalist>
+      </Box>
+      <Box p={2} bg="primary" sx={{ flex: "4" }}>
+      <DatePicker
+        showYearDropdown
+        selected={date}
+        // format="dd/mm/yyyy"
+        onChange={(date) => {
+          console.log(date);
+          setDate(date);
+        }}
+      />
+      </Box>
+      <Box p={2} bg="primary" sx={{ flex: "4" }}>
+      <Button variant="secondary" onClick={handleSearch}>
+        Search
+      </Button>
+      </Box>
 
-      <div
+      {/* <div
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
         }}
-      ></div>
-    </div>
+      ></div> */}
+    </Flex>
   );
 };
 
