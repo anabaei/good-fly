@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Button, Flex, Box } from "theme-ui";
+import { jsx, Button, Flex, Box, Grid } from "theme-ui";
+import { useResponsiveValue, useBreakpointIndex } from "@theme-ui/match-media";
 
 import Link from "next/link";
 import {
@@ -18,9 +19,10 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "react-datepicker";
-
+import { useRouter } from "next/router";
 
 const searches = () => {
+  const router = useRouter();
   const notes = new Array(15)
     .fill(1)
     .map((e, i) => ({ id: i, title: `This is my note ${i}` }));
@@ -32,10 +34,27 @@ const searches = () => {
   });
 
   const [date, setDate] = useState(null);
+  const [departure, setDeparture] = useState(null);
+  const [destination, setDestination] = useState(null);
 
   const handleSearch = (e) => {
-    console.log("sss", e.target.name);
+    console.log("target= ", e.target.name);
+    if (e.target.name === "destination") setDestination(e.target.value);
+    else if (e.target.name === "departure") setDeparture(e.target.value);
     //fetch data from third party
+
+    // router.push("/notes/ss", `/notes/3`)
+  };
+
+  const handleSubmit = (e) => {
+    console.log("<<<", departure, destination, date);
+    console.log("submited", e);
+    //fetch data from third party
+
+    router.push({
+      pathname: `/travels}`,
+      query: { departure: departure, destination: destination, date: date },
+    });
   };
   const autocompleteCities = [
     "Vancouver",
@@ -44,15 +63,15 @@ const searches = () => {
     "Seatl",
     "starfish",
   ];
-
+  const re = useBreakpointIndex();
   return (
-    <Flex>
-      <Box p={2} bg="primary" sx={{ flex: "2" }}>
+    <Grid className="searchMain" gap={2} columns={[1, 1, 6]}>
+      <Box className="searchBox"></Box>
+      <Box className="searchBox">
         <Input
           id="search"
           list="places"
-          name="search"
-          md="4"
+          name="departure"
           onChange={handleSearch}
           pattern={autocompleteCities.join("|")}
           autoComplete="off"
@@ -63,37 +82,37 @@ const searches = () => {
           ))}
         </datalist>
       </Box>
-      <Box p={2} bg="primary" sx={{ flex: "2" }}>
-      <Input
-        id="search"
-        list="places"
-        name="search"
-        md="4"
-        onChange={handleSearch}
-        pattern={autocompleteCities.join("|")}
-        autoComplete="off"
-      />
-      <datalist id="places">
-        {autocompleteCities.map((city, i) => (
-          <option key={i}>{city}</option>
-        ))}
-      </datalist>
+
+      <Box className="searchBox">
+        <Input
+          id="search"
+          list="places"
+          name="destination"
+          onChange={handleSearch}
+          pattern={autocompleteCities.join("|")}
+          autoComplete="off"
+        />
+        <datalist id="places">
+          {autocompleteCities.map((city, i) => (
+            <option key={i}>{city}</option>
+          ))}
+        </datalist>
       </Box>
-      <Box p={2} bg="primary" sx={{ flex: "4" }}>
-      <DatePicker
-        showYearDropdown
-        selected={date}
-        // format="dd/mm/yyyy"
-        onChange={(date) => {
-          console.log(date);
-          setDate(date);
-        }}
-      />
+      <Box className="searchBox">
+        <DatePicker
+          showYearDropdown
+          selected={date}
+          // format="dd/mm/yyyy"
+          onChange={(date) => {
+            // console.log(date);
+            setDate(date);
+          }}
+        />
       </Box>
-      <Box p={2} bg="primary" sx={{ flex: "4" }}>
-      <Button variant="secondary" onClick={handleSearch}>
-        Search
-      </Button>
+      <Box className="searchBox">
+        <Button variant="secondary" onClick={handleSubmit}>
+          Search
+        </Button>
       </Box>
 
       {/* <div
@@ -104,7 +123,8 @@ const searches = () => {
           flexWrap: "wrap",
         }}
       ></div> */}
-    </Flex>
+      <Box></Box>
+    </Grid>
   );
 };
 

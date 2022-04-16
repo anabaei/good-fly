@@ -1,7 +1,7 @@
 import { Box, Label, Input, Button } from "theme-ui";
 
 export default (props) => (
-  <Box sx={{ md: props.md }}>
+  <Box>
     <Label htmlFor={props.label}>{props.label}</Label>
     <Input
       id={props.id}

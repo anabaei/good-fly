@@ -9,3 +9,8 @@
     width: 100%;
     border: 1px solid blue;
 }
+.search-box {
+    text-align: center;
+    border: "1px solid red";
+    padding: "3px 10px";
+  }

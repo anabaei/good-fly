@@ -102,8 +102,28 @@
     .svg:hover .arm {
       animation: none;
     }
+
+    .leftBar {
+      display: none
+    }
+    .rightBar{
+      display: none
+    }
   
     .svg:hover .arm {
       animation: wave 560ms ease-in-out;
     }
+  }
+  
+  .searchBox {
+    
+    text-align: center;
+    padding: .1ex 1ex;
+   
+  }
+
+  .cases {
+    border:1px solid red;
+    padding: 4ex 2ex;
+
   }
