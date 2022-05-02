@@ -13,7 +13,7 @@ export default (req, res) => {
   console.log("params= ", params);
 
   return (
-    <Grid gap={1} columns={[1, 3, "1fr 1fr", "1fr 3fr 1fr"]}>
+    <Grid gap={1} columns={[1, "1fr 7fr 1fr", 1, "1fr 3fr 1fr", 1, "1fr 3fr 1fr"]}>
       <Box className="leftBar">leftBar</Box>
       <Box className="cases">
         <h3>Departure: Tehran Date: Destination: Vancouver Date:</h3>
