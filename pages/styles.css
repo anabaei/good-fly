@@ -98,7 +98,7 @@
     }
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .svg:hover .arm {
       animation: none;
     }
@@ -124,6 +124,11 @@
 
   .cases {
     border:1px solid red;
-    padding: 4ex 2ex;
+    padding: 1ex 3ex;
 
+  }
+
+  /* travelDetails */
+  .travelDetailsInfo {
+    padding: 8px;
   }

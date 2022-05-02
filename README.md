@@ -9,6 +9,15 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 // 2 in ipad 
 // 6 in desktopxs
 ```
+```javascript
+<Grid gap={1} columns={[1, "1fr 7fr 1fr", 1, "1fr", 1, "1fr"]}>
+// one row in mobile
+// one row in ipad
+// 3 rows in desktops
+// 1 left bar, 7 middle and 1 right bar in desktop
+// 1 bar for ipad
+// 1, 3 and 1 in mobile 
+```
 
 * User media response index [here](https://theme-ui.com/packages/match-media/) to have break point
 

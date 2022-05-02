@@ -52,7 +52,7 @@ const searches = () => {
     //fetch data from third party
 
     router.push({
-      pathname: `/travels}`,
+      pathname: `/travels`,
       query: { departure: departure, destination: destination, date: date },
     });
   };
