@@ -13,16 +13,16 @@ const travelDetails = () => {
           Name 
         </div>
         <div>
-          Departed From
+          Departed From 
         </div>
         <div>
-          Date
+          Date:
         </div>
         <div>
           Destination
         </div>
         <div>
-          Date
+          Date:
         </div>
 
       </Box>
