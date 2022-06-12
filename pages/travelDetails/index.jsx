@@ -8,23 +8,17 @@ const travelDetails = () => {
 
   return (
     <Grid gap={1} columns={[1, "1fr"]}>
-      <Box bg="primary"  className="travelDetailsInfo" gap={1} columns={[4, "1fr 1fr"]}>
-        <div>
-          Name 
-        </div>
-        <div>
-          Departed From 
-        </div>
-        <div>
-          Date:
-        </div>
-        <div>
-          Destination
-        </div>
-        <div>
-          Date:
-        </div>
-
+      <Box
+        bg="primary"
+        className="travelDetailsInfo"
+        gap={1}
+        columns={[4, "1fr 1fr"]}
+      >
+        <div columns={[1, "1fr 7fr 1fr", 1, "1fr", 1, "1fr"]}>Name</div>
+        <div>Departed From</div>
+        <div>Date:</div>
+        <div>Destination</div>
+        <div>Date:</div>
       </Box>
       <Box bg="default">Box</Box>
     </Grid>
