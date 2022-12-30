@@ -104,10 +104,12 @@
     }
 
     .leftBar {
-      display: none
+      display: block;
+      border:2px solid red;
     }
     .rightBar{
-      display: none
+      display: block;
+      border:2px solid red;
     }
   
     .svg:hover .arm {

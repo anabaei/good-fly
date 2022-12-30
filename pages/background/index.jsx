@@ -1,5 +1,6 @@
 import Image from "next/image";
 import searches from "../search/index.jsx";
+import travels from "../travels/index.jsx";
 
 const Background = () => (
   <div>
@@ -32,7 +33,9 @@ const Background = () => (
        {searches()}
       <br />
       as a Background
+      {travels()}
     </p>
+    
   </div>
 );
 

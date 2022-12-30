@@ -15,7 +15,7 @@ import Input from "../../src/components/common/input";
 // import ReactSelect from 'react-select-cities';
 
 import TextField from "@mui/material/TextField";
-// import datepicker from 'js-datepicker'
+
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "react-datepicker";
@@ -109,6 +109,7 @@ const searches = () => {
           }}
         />
       </Box>
+      
       <Box className="searchBox">
         <Button variant="secondary" onClick={handleSubmit}>
           Search
@@ -123,7 +124,7 @@ const searches = () => {
           flexWrap: "wrap",
         }}
       ></div> */}
-      <Box></Box>
+      
     </Grid>
   );
 };

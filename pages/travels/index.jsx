@@ -1,36 +1,44 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Button, Flex, Box, Grid } from "theme-ui";
-import { useRouter } from "next/router";
+
+import { useState, useEffect } from 'react'
+import TravelorBox  from '../../src/components/TravelorBox'
 
 import Link from "next/link";
 
 export default (req, res) => {
-  const router = useRouter();
-  console.log("router.query= ", router.query);
-  const { params } = router.query;
 
-  console.log("params= ", params);
+  const [data, setData] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+  
+  useEffect(() => {
+    setLoading(true)
+    fetch('https://api.publicapis.org/entries')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+        console.log(">>>",data.entries)
+      })
+  }, [])
 
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p>
+  if(data)
   return (
-    <Grid gap={1} columns={[1, "1fr 7fr 1fr", 1, "1fr 3fr 1fr", 1, "1fr 3fr 1fr"]}>
+    
+    <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
       <Box className="leftBar">leftBar</Box>
-      <Box className="cases">
-        <h3>Departure: Tehran Date: Destination: Vancouver Date:</h3>
-        <h5>Description: some info</h5>
-        <Button
-          onClick={(e) =>
-            router.push({
-              pathname: `/travelDetails`,
-              query: { travelId: "12345" },
-            })
-          }
-        >
-          details
-        </Button>
+      <Box>
+      {[...data.entries].map((x, index) =>
+        
+          <TravelorBox  person={{ name: x.API, description: x.Description }} />
+       
+      )}
       </Box>
+      
       <Box className="rightBar">Rightbar</Box>
-      <Box bg="">Box</Box>
     </Grid>
   );
 };
