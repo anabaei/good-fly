@@ -103,14 +103,7 @@
       animation: none;
     }
 
-    .leftBar {
-      display: block;
-      border:2px solid red;
-    }
-    .rightBar{
-      display: block;
-      border:2px solid red;
-    }
+    
   
     .svg:hover .arm {
       animation: wave 560ms ease-in-out;
@@ -132,5 +125,11 @@
 
   /* travelDetails */
   .travelDetailsInfo {
-    padding: 8px;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(185, 181, 181)
+  }
+
+  .travelor-box {
+    border: solid blue .1rem;
+    padding: .5rem;
   }
