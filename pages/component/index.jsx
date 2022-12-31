@@ -15,7 +15,7 @@ export default (req, res) => {
   return (
     <Grid
       gap={1}
-      columns={["1fr 1fr 1fr", "1fr 4fr 1fr"]}
+      columns={["1fr", "1fr 1fr"]}
     >
       <Box className="leftBar" style={{border: "2px solid green"}}>Bar</Box>
       <Box className="leftBar" style={{border: "2px solid red"}}>Bar</Box>

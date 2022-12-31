@@ -1,11 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Button, Flex, Box, Grid } from "theme-ui";
+import { jsx, Box, Grid } from "theme-ui";
 
 import { useState, useEffect } from 'react'
 import TravelorBox  from '../../src/components/TravelorBox'
-
-import Link from "next/link";
 
 export default (req, res) => {
 
@@ -30,14 +28,16 @@ export default (req, res) => {
     
     <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
       <Box className="leftBar">leftBar</Box>
-      <Box>
+      <Grid
+      gap={1}
+      columns={["1fr", "1fr 1fr"]}
+    >
       {[...data.entries].map((x, index) =>
-        
+      <Box className="travelor-box">
           <TravelorBox  person={{ name: x.API, description: x.Description }} />
-       
-      )}
       </Box>
-      
+      )}
+      </Grid>
       <Box className="rightBar">Rightbar</Box>
     </Grid>
   );

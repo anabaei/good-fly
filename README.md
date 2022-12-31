@@ -17,6 +17,8 @@ import { Box, Grid } from "theme-ui";
       <Box> right box  </Box>
       <Box> middle box </Box>
 </Grid>
+// It means 3 columns, if we pass two or one numbers like this 
+// ["1fr", "1fr 1fr"] it means one row in mobile, two same rows in desktop
 // columns={["mobile", "desktop"]} >
 // gap 1 is distance between each box
 // mobile:  left and right are 1 and 2 is middle
