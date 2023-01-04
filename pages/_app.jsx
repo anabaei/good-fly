@@ -4,8 +4,9 @@ import { jsx } from 'theme-ui'
 import { ThemeProvider } from 'theme-ui'
 import { themeLight, themeDark } from '../theme'
 import Nav from '../src/components/nav'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import "./styles.css";
 
@@ -18,6 +19,12 @@ export default function App({ Component, pageProps }) {
   } 
 
   const [currentTheme, setstate] = useState(themeLight)
+  // useEffect(() => {
+  //   typeof document !== undefined
+  //     ? require("../node_modules/react-bootstrap")
+  //     : null;
+  //   },[]);
+
 
   return (
     <ThemeProvider theme={currentTheme} >
