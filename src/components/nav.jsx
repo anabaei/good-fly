@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
 import { useState } from 'react';
-import Example from './example';
+import Modal from './common/modal';
 
 const Nav = (props) => (
   <header
@@ -39,7 +39,7 @@ const Nav = (props) => (
       </Link>
       
      {/* modal */}
-     <Example />
+     <Modal />
 
     </nav>
   </header>
