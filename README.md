@@ -30,3 +30,6 @@ import { Box, Grid } from "theme-ui";
 ## Middleware
 * Add auth or redirection by creating a file like _middleware.ts in each folder at pages like here
 https://nextjs.org/docs/advanced-features/middleware
+
+## Modal
+* use bootstrap to create  modal, before that make sure to import bootstrap css in the root of the _app  
