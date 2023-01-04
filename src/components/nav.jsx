@@ -3,6 +3,7 @@
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
 import { useState } from 'react';
+import Example from './example';
 
 const Nav = (props) => (
   <header
@@ -37,6 +38,9 @@ const Nav = (props) => (
         <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>notes</a>
       </Link>
       
+     {/* modal */}
+     <Example />
+
     </nav>
   </header>
 );
