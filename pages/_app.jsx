@@ -23,16 +23,11 @@ export default function App({
   } 
 
   const [currentTheme, setstate] = useState(themeLight)
-  // useEffect(() => {
-  //   typeof document !== undefined
-  //     ? require("../node_modules/react-bootstrap")
-  //     : null;
-  //   },[]);
+
 
 
   return (
     <SessionProvider session={session}>
-     {session ? console.log("99", session.user): ''}
     <ThemeProvider theme={currentTheme} >
       <div>
         <Nav changeTheme={changeTheme}/>

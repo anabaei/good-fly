@@ -29,9 +29,8 @@ export default (req, res) => {
   if (!data) return <p>No profile data</p>
   if(data)
   return (
-    
     <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
-      {session.user.name}
+       {console.log("session: ", session)}
       <Box className="leftBar">leftBar</Box>
       <Grid
       gap={1}

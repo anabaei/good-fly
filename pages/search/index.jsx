@@ -29,7 +29,7 @@ const searches = () => {
 
   //componentdidmount, componentdidupdate
   useEffect(() => {
-    console.log("99");
+    console.log(" ");
     // get api fetch here
   });
 
