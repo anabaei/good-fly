@@ -9,7 +9,7 @@ export function middleware(req: NextRequest, ev: NextFetchEvent) {
  // Beware loops when redirecting to the same directory
  //return NextResponse.redirect('/2022')
 
-  console.log("hi", auth)
+  console.log("hi>><<<>>", auth)
   return NextResponse.next()
 }
 

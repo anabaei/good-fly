@@ -3,9 +3,12 @@
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
 import { useState } from 'react';
-import Example from './example';
+import Modal from './common/modal';
+import { useSession, signIn, signOut } from "next-auth/react"
+
 
 const Nav = (props) => (
+  
   <header
     sx={{
       height: "60px",
@@ -39,8 +42,9 @@ const Nav = (props) => (
       </Link>
       
      {/* modal */}
-     <Example />
-
+     <Modal />
+    
+     <button onClick={() => signIn()}>Sign in</button>
     </nav>
   </header>
 );

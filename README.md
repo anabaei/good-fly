@@ -32,4 +32,31 @@ import { Box, Grid } from "theme-ui";
 https://nextjs.org/docs/advanced-features/middleware
 
 ## Modal
-* use bootstrap to create  modal, before that make sure to import bootstrap css in the root of the _app  
+* use bootstrap to create  modal, before that make sure to import bootstrap css in the root of the _app 
+
+
+## Git
+* `git config pull.rebase false` using to merge local branch with repository branch when `git pull` we have divergent branch and need to specify how to reconcile them
+
+
+## TravelInfos
+```javascript
+// departure location date 
+// destination location date
+// explanation
+// cost 
+
+```
+## PackageInfos
+```javascript
+// destination location
+// departure location 
+// explanation
+// willing to pay
+
+```
+
+## .env 
+
+* To save env variable define `env` file as define here https://nextjs.org/docs/basic-features/environment-variables
+* 
