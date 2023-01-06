@@ -4,12 +4,16 @@ import { jsx, Box, Grid } from "theme-ui";
 
 import { useState, useEffect } from 'react'
 import TravelorBox  from '../../src/components/TravelorBox'
+import { useSession, signIn, signOut } from "next-auth/react";
+
 
 export default (req, res) => {
 
   const [data, setData] = useState(null)
   const [isLoading, setLoading] = useState(false)
   
+  const { data: session } = useSession();
+
   useEffect(() => {
     setLoading(true)
     fetch('https://api.publicapis.org/entries')
@@ -27,6 +31,7 @@ export default (req, res) => {
   return (
     
     <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
+      {session.user.name}
       <Box className="leftBar">leftBar</Box>
       <Grid
       gap={1}

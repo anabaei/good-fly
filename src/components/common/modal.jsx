@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import TravelForm from './travelForm'
+
+import TravelAndPackageForm from './travelAndpackageFroms'
 
 function ModalWrapper() {
   const [show, setShow] = useState(false);
@@ -12,7 +13,7 @@ function ModalWrapper() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        Place an Order
       </Button>
 
       <Modal
@@ -24,7 +25,8 @@ function ModalWrapper() {
         <Modal.Header closeButton>
           <Modal.Title> Travel </Modal.Title>
         </Modal.Header>
-        <TravelForm />
+        
+        <TravelAndPackageForm />
         {/* <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

@@ -37,3 +37,21 @@ https://nextjs.org/docs/advanced-features/middleware
 
 ## Git
 * `git config pull.rebase false` using to merge local branch with repository branch when `git pull` we have divergent branch and need to specify how to reconcile them
+
+
+## TravelInfos
+```javascript
+// departure location date 
+// destination location date
+// explanation
+// cost 
+
+```
+## PackageInfos
+```javascript
+// destination location
+// departure location 
+// explanation
+// willing to pay
+
+```
