@@ -4,7 +4,6 @@ import { jsx } from 'theme-ui'
 import Link from 'next/link'
 import { useState } from 'react';
 import Modal from './common/modal';
-import GoogleLogin from './common/google_login';
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
