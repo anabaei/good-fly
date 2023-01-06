@@ -55,3 +55,8 @@ https://nextjs.org/docs/advanced-features/middleware
 // willing to pay
 
 ```
+
+## .env 
+
+* To save env variable define `env` file as define here https://nextjs.org/docs/basic-features/environment-variables
+* 
