@@ -1,20 +1,29 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { useRouter } from "next/router";
 import { jsx, Button, Grid, Box } from "theme-ui";
 
-const TravelorBox = (props) => (
-  <div>
-      {console.log("params!!>>= ",props.person.email)} 
-    <h3>Title: {props.person.name}</h3><h5>Description: {props.person.description}</h5><Button
-    onClick={() => router.push({
-      pathname: `/travelDetails`,
-      query: { travelId: "12345" },
-    })}
-  >
-    details
-  </Button>
-  </div>
+export default function TravelorBox(props) {
+  const router = useRouter();
 
-);
+  return (
+    <div>
+      {console.log("params!!>>= ", props.person.email)}
+      <div>Title: {props.person.name}</div>
+      <div>Description: {props.person.description}</div>
+      <Button
+        onClick={() =>
+          router.push({
+            pathname: `/details/[travelId]`,
+            query: { travelId: "12345" },
+          })
+        }
+      >
+        details
+      </Button>
+    </div>
+  );
+}
 
-export default TravelorBox
+
+

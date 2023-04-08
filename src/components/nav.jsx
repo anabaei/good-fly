@@ -1,14 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import Link from 'next/link'
-import { useState } from 'react';
-import Modal from './common/modal';
-import { useSession, signIn, signOut } from "next-auth/react"
-
+import { jsx } from "theme-ui";
+import Link from "next/link";
+import { useState, createContext, useContext } from "react";
+import Modal from "./common/modal";
+import ModalLogin from "./login/modal_sign_in"
+import Login from './login/index'
 
 const Nav = (props) => (
-  
   <header
     sx={{
       height: "60px",
@@ -27,26 +26,30 @@ const Nav = (props) => (
         height: "100%",
       }}
     >
-      { console.log(props.changeTheme)}
+      {console.log(props.changeTheme)}
       <Link href="/">
         <a sx={{ fontWeight: "bold", fontSize: 4, cursor: "pointer" }}>
           Note App
         </a>
       </Link>
       {/* {console.log(process.env)} */}
-      <div onClick={props.changeTheme}>
-        change theme
-      </div>
+      <div onClick={props.changeTheme}>change theme</div>
       <Link href="/notes">
         <a sx={{ color: "text", fontSize: 3, cursor: "pointer" }}>notes</a>
       </Link>
-      
-     {/* modal */}
-     <Modal />
-    
-     <button onClick={() => signIn()}>Sign in</button>
+
+      {/* modal */}
+      {/* <userContext.Provider value={{ user: "Steve" }}> */}
+      <Modal tile="I am Travelor"  travelor="true"  />
+      <Modal tile="place an order" package="true" />
+      {/* const { user } = useContext(userContext); */}
+      {/* </userContext.Provider> */}
+      {/* <ModalLogin tile="Sing In.."  sign_in="true"  /> */}
+      <Login />
+      {/* <button onClick={() => signIn()}>Sign in</button> */}
     </nav>
   </header>
 );
 
 export default Nav;
+
