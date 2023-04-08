@@ -16,6 +16,7 @@ package-lock.json
 
 # misc
 .DS_Store
+yarn.lock 
 
 # debug
 npm-debug.log*
