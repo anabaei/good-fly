@@ -5,8 +5,8 @@ export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
-        clientId:process.env.REACT_APP_GOOGL_CLIENT_ID,
-        clientSecret:process.env.REACT_APP_GOOGL_SECRET
+        clientId:process.env.CLIENT_ID,
+        clientSecret:process.env.CLIENT_SECRET
       }),
     // ...add more providers here
   ],

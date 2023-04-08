@@ -7,8 +7,13 @@ import Link from "next/link";
 
 export default (req, res) => {
   const router = useRouter();
-  console.log("router.query= ", router.query);
-  const { params } = router.query;
+ 
+  const handleClick = (travelId) => {
+    router.push({
+      pathname: "/details/[travelId]",
+      query: { pid: travelId },
+    });
+  };
 
   console.log("params= ", params);
 
@@ -16,18 +21,9 @@ export default (req, res) => {
     <Grid gap={1} columns={[1, 3, "1fr 1fr", "1fr 3fr 1fr"]}>
       <Box className="leftBar">leftBar</Box>
       <Box className="cases">
-        <h3>Departure: Tehran Date: Destination: Vancouver Date:</h3>
+        <div>Departure: Tehran Date: Destination: Vancouver Date:</div>
         <h5>Description: some info</h5>
-        <Button
-          onClick={(e) =>
-            router.push({
-              pathname: `/travelDetails`,
-              query: { travelId: "12345" },
-            })
-          }
-        >
-          details
-        </Button>
+        <Button onClick={handleClick("12345")}>details</Button>
       </Box>
       <Box className="rightBar">Rightbar</Box>
       <Box bg="">Box</Box>
