@@ -56,6 +56,7 @@ https://nextjs.org/docs/advanced-features/middleware
 
 ```
 
+
 ## Security
 
 * Use environment variables, create a `.env.local` file in the root directory and add API keys and secret keys as environment variables in the following format:
@@ -75,3 +76,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
  // session includes user's data like id, email, image, name
  // status indicate it is authorized or not
 ```
+
+## .env 
+
+* To save env variable define `env` file as define here https://nextjs.org/docs/basic-features/environment-variables
+* 
