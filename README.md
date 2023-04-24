@@ -59,6 +59,7 @@ https://nextjs.org/docs/advanced-features/middleware
 
 ## Security
 
+* Use oauth next here https://next-auth.js.org/configuration/providers/oauth
 * Use environment variables, create a `.env.local` file in the root directory and add API keys and secret keys as environment variables in the following format:
 ```javascript
 API_KEY=your_api_key

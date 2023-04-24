@@ -15,6 +15,7 @@ export default (req, res) => {
   const { data: session } = useSession();
 
   useEffect(() => {
+    console.log("session=!=",session)
     setLoading(true)
     fetch('https://api.publicapis.org/entries')
       .then((res) => res.json())
@@ -30,7 +31,7 @@ export default (req, res) => {
   if(data)
   return (
     <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
-       {console.log("session: ", session)}
+       {console.log("session:! ", session)}
       <Box className="leftBar">leftBar</Box>
       <Grid
       gap={1}
