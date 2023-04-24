@@ -56,6 +56,7 @@ https://nextjs.org/docs/advanced-features/middleware
 
 ```
 
+
 ## Security
 
 * Use oauth next here https://next-auth.js.org/configuration/providers/oauth
@@ -76,3 +77,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
  // session includes user's data like id, email, image, name
  // status indicate it is authorized or not
 ```
+
+## .env 
+
+* To save env variable define `env` file as define here https://nextjs.org/docs/basic-features/environment-variables
+* 
