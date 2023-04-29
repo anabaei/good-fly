@@ -22,9 +22,9 @@ function ModalWrapper(props) {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
-          <Modal.Title> Travel </Modal.Title>
-        </Modal.Header>
+        <Modal.Header closeButton />
+          {/* <Modal.Title>  </Modal.Title>
+        </Modal.Header> */}
 
         <TravelAndPackageForm props={props} />
         {/* <Modal.Footer>

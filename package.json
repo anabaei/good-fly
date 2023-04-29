@@ -22,6 +22,7 @@
     "dotenv-load": "^2.0.0",
     "firebase": "^9.6.11",
     "httpie": "^1.1.2",
+    "jsonwebtoken": "^9.0.0",
     "mui": "^0.0.1",
     "next": "^12.1.5",
     "next-auth": "^4.21.1",
