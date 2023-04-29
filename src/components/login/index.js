@@ -20,6 +20,8 @@ export default function Login() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': session.accessToken
+
         },
         body: JSON.stringify(session),
       })
