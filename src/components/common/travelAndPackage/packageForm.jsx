@@ -5,12 +5,20 @@ import { useState } from "react";
 
 function PackageForm() {
   const [date, setDate] = useState(new Date());
-  const data = useSession()
+  // const data = useSession()
   const { data: session, status, accessToken } = useSession();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-   console.log("III", data)
+
+   console.log("III", session)
+   try {
+    
+     const ss = await fetch('http://localhost:3000/api/getToken')
+   } catch (error) {
+    console.log("error", error)
+   }
+   
     const form = event.target;
     const jsonData = new FormData(form);
     

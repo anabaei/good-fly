@@ -35,22 +35,22 @@ export const authOptions = {
     async jwt({ token, account, user }) {
       
       console.log("user>>> ", user)
-      const encodedToken = jwt.sign(token, 'aaaa');
-      console.log('Encoded JWT token:', encodedToken);
       console.log('account>>', account)
       if (account) {
         token.accessToken = account.access_token
       }
      
-      jwt.verify(encodedToken, 'aaaa', (err, decoded) => {
-        if (err) {
-          console.log(err.message);
-          // Error: invalid signature
-          return;
-        }
-        console.log('>>>>',decoded);
-        // { sub: '1234567890', name: 'John Doe', iat: 1516239022 }
-      });
+      //  const re = await fetch('http://localhost:3001/api/getToken')
+      
+      // jwt.verify(encodedToken, 'aaaa', (err, decoded) => {
+      //   if (err) {
+      //     console.log(err.message);
+      //     // Error: invalid signature
+      //     return;
+      //   }
+      //   console.log('>>>>',decoded);
+      //   // { sub: '1234567890', name: 'John Doe', iat: 1516239022 }
+      // });
 
       return token
     },
@@ -62,6 +62,7 @@ export const authOptions = {
         ...session,
         accessToken: String(token.accessToken)
       }
+      return session
     }
       
     //   return sessionWithToken
