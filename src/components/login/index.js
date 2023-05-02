@@ -10,33 +10,33 @@ export default function Login() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    console.log("session=<>=",session)
-    if (session) {
-      // check db if exist the user, then don't need to signup
-      // 
+  // useEffect(() => {
+  //   console.log("session=<>=",session)
+  //   if (session) {
+  //     // check db if exist the user, then don't need to signup
+  //     // 
       
-      fetch('http://localhost:3001/users/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': session.accessToken
+  //     fetch('http://localhost:3001/users/verify', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': session.accessToken
 
-        },
-        body: JSON.stringify(session),
-      })
-        .then((res) => console.log("came here", res))
-        .then((data) => {
+  //       },
+  //       body: JSON.stringify(session),
+  //     })
+  //       .then((res) => console.log("came here", res))
+  //       .then((data) => {
         
-          setUser(data.user);
-        })
-        .catch((error) => {
-          console.log("came here er", error)
+  //         setUser(data.user);
+  //       })
+  //       .catch((error) => {
+  //         console.log("came here er", error)
        
-          setError(error);
-        });
-    }
-  }, [session]);
+  //         setError(error);
+  //       });
+  //   }
+  // }, [session]);
 
 
   return (
