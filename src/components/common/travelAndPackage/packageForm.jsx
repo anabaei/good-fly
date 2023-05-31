@@ -10,26 +10,36 @@ function PackageForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     console.log("III", session);
     try {
-     const  jwtTokenResponse = await fetch("http://localhost:3000/api/getToken");
-     const jwtToken = await jwtTokenResponse.text();
-   
-   const data = {session}
-    const form = event.target;
-    const jsonData = new FormData(form);
+      const jwtTokenResponse = await fetch(
+        "http://localhost:3000/api/getToken"
+      );
+      const jwtToken = await jwtTokenResponse.text();
 
-    
+      const data = { session };
+      const form = event.target;
+      const jsonData = new FormData(form);
+      const formData = new FormData(event.target);
+      
+      accessToken = JSON.parse(localStorage.getItem('session'))
+      console.log(">>>>", accessToken)
       const response = await fetch("http://localhost:3001/packages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${jwtToken.replace(/['"]+/g, '')}`
+          "Authorization": `Bearer ${jwtToken.replace(/['"]+/g, "")}`,
+          accessToken
+          
         },
         body: JSON.stringify({
           ...jsonData,
-          ...data,
+          location: formData.get("location"),
+          destination: formData.get("destination"),
+          timeRange: formData.get("departureDate"),
+          willingToPay: formData.get("willingToPay") === "on",
+          explanation: formData.get("explanation")
         }),
       });
 
