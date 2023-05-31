@@ -32,6 +32,8 @@ export default (req, res) => {
   return (
     <Grid gap={1} columns={[ "1fr 7fr 1fr", "1fr 3fr 1fr", "1fr 3fr 1fr"]}>
        {console.log("session:! ", session)}
+       {localStorage.setItem('myVariable', 'myValue')}
+       {localStorage.setItem('session', JSON.stringify(session))}
       <Box className="leftBar">leftBar</Box>
       <Grid
       gap={1}

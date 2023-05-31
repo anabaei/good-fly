@@ -12,14 +12,16 @@ function TravelForm() {
 
     // get the form data
     const formData = new FormData(event.target);
-    console.log("III", session)
+    
+    const token = JSON.parse(localStorage.getItem('session'))
     // make a POST request to the backend endpoint with the form data
     fetch('/backend-endpoint', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': status? session.accessToken: ''
-
+        'Authorization': token.accessToken,
+        'expiresAt': token.expires,
+        token
       },
       body: formData,
     })
